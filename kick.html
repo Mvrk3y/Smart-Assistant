@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FNB Smart Assistant</title>
+  <link rel="stylesheet" href="kick.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>FNB Smart Assistant</h1>
+
+    <button id="mainBtn">Saving Assistant</button>
+
+    <div id="featureOptions" class="section hidden">
+      <button onclick="showSection('smartSaving')">1. Smart Saving Goal Assistant</button>
+      <button onclick="showSection('loanChecker')">2. Automated Loan Processor</button>
+      <button onclick="showSection('investmentAdvisor')">3. Investment Advisor</button>
+    </div>
+
+    <!-- SMART SAVING GOAL ASSISTANT -->
+    <div id="smartSaving" class="section hidden">
+      <h2>Smart Saving Goal Assistant</h2>
+
+      <label>Goal Name: <input type="text" id="goalName" /></label>
+      <label>Category: 
+        <select id="goalCategory">
+          <option>Travel</option>
+          <option>Emergency</option>
+          <option>Shopping</option>
+          <option>Investment</option>
+        </select>
+      </label>
+      <label>Target Amount (P): <input type="number" id="targetAmount" /></label>
+      <label>Deadline (months): <input type="number" id="deadline" /></label>
+      <label>Current Savings (P): <input type="number" id="currentSavings" /></label>
+
+      <button onclick="calculateSavingGoal()">Calculate</button>
+
+      <div class="progress-ring-container">
+        <svg class="progress-ring" width="120" height="120">
+          <circle class="progress-ring__circle" stroke="#ffde59" stroke-width="10" fill="transparent" r="50" cx="60" cy="60" />
+        </svg>
+        <div id="progressText">0%</div>
+      </div>
+
+      <p id="savingResult"></p>
+    </div>
+
+    <!-- LOAN ELIGIBILITY CHECKER -->
+    <div id="loanChecker" class="section hidden">
+      <h2>Automated Loan Processor</h2>
+
+      <label>Monthly Income (P): <input type="number" id="monthlyIncome" /></label>
+      <label>Loan Amount (P): <input type="number" id="loanAmount" /></label>
+      <label>Desired Monthly Repayment (P): <input type="number" id="monthlyRepayment" /></label>
+
+      <button onclick="checkLoanEligibility()">Check Eligibility</button>
+      <p id="loanResult"></p>
+    </div>
+
+    <!-- INVESTMENT ADVISOR -->
+    <div id="investmentAdvisor" class="section hidden">
+      <h2>Investment Advisor</h2>
+
+      <label>Cash Available (P): <input type="number" id="cashInvest" /></label>
+      <label>Investment Duration (months): <input type="number" id="investDuration" /></label>
+
+      <button onclick="getInvestmentAdvice()">Get Advice</button>
+      <p id="investmentAdvice"></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
