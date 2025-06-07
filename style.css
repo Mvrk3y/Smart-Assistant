@@ -39,7 +39,7 @@ body {
 .tile {
   width: 25%;
   min-width: 80px;
-  padding: 40px;
+  padding: 20px;
   text-align: center;
 }
 .tile-icon {
